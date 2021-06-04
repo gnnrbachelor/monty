@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 
 /**
  * struct global_var - struct containing setting for monty
@@ -54,5 +55,7 @@ typedef struct instruction_s
 void ret_operation(char *operation, stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+int check_empty(char *buffer, char *delim);
+int digit_check(char *arg);
 
 #endif

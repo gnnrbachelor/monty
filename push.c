@@ -1,6 +1,26 @@
 #include "monty.h"
 
 /**
+ *
+ *
+ *
+ */
+
+int digit_check(char *arg)
+{
+	int i = 0;
+
+	for (; arg[i]; i++)
+	{
+		if (arg[i] == '-' && i == 0)
+			continue;
+		if (isdigit(arg[i] == 0))
+			return (1);
+	}
+	return (0);
+}
+
+/**
  * push - Pushes onto stack
  *
  * @stack: Head
@@ -11,6 +31,19 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *n_node = NULL;
+	char *arg = NULL;
+	unsigned int i = 0;
+
+	arg = strtok(NULL, "\n\t\r ");
+	if (arg == NULL || digit_check(arg))
+	{
+		dprintf(STDOUT_FILENO,
+			"L%u: usage: push integer\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	i = atoi(arg);
 
 	n_node = malloc(sizeof(stack_t));
 	if (n_node == NULL)
@@ -19,7 +52,7 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	n_node->n = line_number;
+	n_node->n = i;
 
 	if (*stack == NULL)
 	{

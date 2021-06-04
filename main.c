@@ -37,6 +37,11 @@ int main(int ac, char **av)
 	{
 		line_number++;
 		operation = strtok(buffer, "\n\t\r ");
+		if (operation == NULL)
+		{
+			if (check_empty(buffer, "\n\t\r "))
+				continue;
+		}
 		if (operation != NULL)
 			ret_operation(operation, &stack, line_number);
 	}
