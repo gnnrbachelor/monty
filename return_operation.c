@@ -28,7 +28,7 @@ void ret_operation(char *operation, stack_t **stack,
 		}
 	}
 
-	dprintf(STDOUT_FILENO,
+	fprintf(stderr,
 		"L%u: unknown instruction %s\n",
 		line_number, operation);
 	exit(EXIT_FAILURE);
