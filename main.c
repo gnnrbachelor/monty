@@ -42,7 +42,7 @@ int main(int ac, char **av)
 			if (check_empty(buffer, "\n\t\r "))
 				continue;
 		}
-		if (operation != NULL)
+		if (operation != NULL && operation[0] != '#')
 			ret_operation(operation, &stack, line_number);
 	}
 	free_stack(&stack);
