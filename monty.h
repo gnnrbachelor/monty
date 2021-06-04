@@ -6,19 +6,20 @@
 #include <unistd.h>
 
 /**
- * struct global_set - struct containing setting for monty
+ * struct global_var - struct containing setting for monty
  * @mode: Mode
  * @len: Length
  */
 
-typedef struct global_set
+typedef struct global_var
 {
 	int mode;
-	size_t len;
 	char *value;
-} global_t;
+} global_var;
 
-extern global_t global_s;
+extern global_var global_s;
+global_var global_s;
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -51,7 +52,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void return_operation(char *operation, stack_t **stack, unsigned int line_number);
-void push_n(stack_t **stack, unsigned int num);
-void check_mode(stack_t **stack, unsigned int line_number);
+void push_n(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif

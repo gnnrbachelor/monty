@@ -16,8 +16,10 @@ int main(int ac, char **av)
 	size_t buffer_length = 0;
 	stack_t *stack = NULL;
 	FILE *file_for = NULL;
-	int length = 0;
 	char *operation = NULL;
+
+	global_s.mode = 0;
+	global_s.value = NULL;
 
 	if (ac != 2)
 	{
@@ -31,12 +33,11 @@ int main(int ac, char **av)
 		printf("Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((length = getline(&buffer, &buffer_length, file_for)) != -1)
+	while ((getline(&buffer, &buffer_length, file_for)) != -1)
 	{
-		printf("%s\n", buffer);
 		line_number++;
-		operation = strtok(buffer, "\n");
-		if (operation != NULL && operation[0] != '#')
+		operation = strtok(buffer, "\n\t\r ");
+		if (operation != NULL)
 			return_operation(operation, &stack, line_number);
 	}
 	exit(EXIT_SUCCESS);
