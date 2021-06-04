@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * digit_check - checks for digits
+ * @arg: argument
+ * Return: 1 or 0
  */
 
 int digit_check(char *arg)
@@ -37,9 +37,7 @@ void push(stack_t **stack, unsigned int line_number)
 	arg = strtok(NULL, "\n\t\r ");
 	if (arg == NULL || digit_check(arg))
 	{
-		dprintf(STDOUT_FILENO,
-			"L%u: usage: push integer\n",
-			line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
