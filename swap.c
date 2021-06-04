@@ -3,7 +3,7 @@
 /**
  * swap - Swaps top two elements
  * @stack: Head of stack
- * @line_number
+ * @line_number: Line Number
  * Return: Void
  *
  */
