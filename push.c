@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *n_node = NULL;
 	char *arg = NULL;
-	unsigned int i = 0;
+	int i = 0;
 
 	arg = strtok(NULL, "\n\t\r ");
 	if (arg == NULL || digit_check(arg))
