@@ -45,5 +45,7 @@ int main(int ac, char **av)
 		if (operation != NULL)
 			ret_operation(operation, &stack, line_number);
 	}
+	free_stack(&stack);
+	free(buffer);
 	exit(EXIT_SUCCESS);
 }

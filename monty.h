@@ -58,5 +58,6 @@ void pall(stack_t **stack, unsigned int line_number);
 int check_empty(char *buffer, char *delim);
 int digit_check(char *arg);
 void pint(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t **stack);
 
 #endif
