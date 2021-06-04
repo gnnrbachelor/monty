@@ -38,7 +38,7 @@ int main(int ac, char **av)
 		line_number++;
 		operation = strtok(buffer, "\n\t\r ");
 		if (operation != NULL)
-			return_operation(operation, &stack, line_number);
+			ret_operation(operation, &stack, line_number);
 	}
 	exit(EXIT_SUCCESS);
 }

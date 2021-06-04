@@ -4,7 +4,7 @@
  * push - Pushes onto stack
  *
  * @stack: Head
- * @num:  data
+ * @line_number:  data
  * Return: Void
  */
 
