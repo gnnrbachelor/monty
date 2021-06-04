@@ -15,6 +15,7 @@ void ret_operation(char *operation, stack_t **stack,
 	instruction_t operations[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
