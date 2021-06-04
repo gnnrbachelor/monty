@@ -23,14 +23,14 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf("USAGE: monty file\n");
+		dprintf(STDOUT_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
 	file_for = fopen(av[1], "r");
 	if (file_for == NULL)
 	{
-		printf("Error: Can't open file %s\n", av[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((getline(&buffer, &buffer_length, file_for)) != -1)
