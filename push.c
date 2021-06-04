@@ -8,7 +8,7 @@
  * Return: Void
  */
 
-void push_n(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *n_node = NULL;
 
@@ -21,7 +21,13 @@ void push_n(stack_t **stack, unsigned int line_number)
 
 	n_node->n = line_number;
 
-	if (*stack)
+	if (*stack == NULL)
+	{
+		n_node->next = *stack;
+		n_node->prev = NULL;
+		*stack = n_node;
+	}
+	else
 	{
 		n_node->next = *stack;
 		n_node->prev = (*stack)->prev;
@@ -29,8 +35,4 @@ void push_n(stack_t **stack, unsigned int line_number)
 		*stack = n_node;
 		return;
 	}
-
-	n_node->next = *stack;
-	n_node->prev = NULL;
-	*stack = n_node;
 }

@@ -12,7 +12,7 @@ void return_operation(char *operation, stack_t **stack, unsigned int line_number
 {
 	size_t i = 0;
 	instruction_t operations[] = {
-		{"push", push_n},
+		{"push", push},
 		{"pall", pall},
 		{NULL, NULL}
 	};
