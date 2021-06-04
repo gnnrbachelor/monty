@@ -16,6 +16,7 @@ void ret_operation(char *operation, stack_t **stack,
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
