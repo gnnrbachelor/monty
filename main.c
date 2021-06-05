@@ -47,6 +47,6 @@ int main(int ac, char **av)
 	}
 	free_stack(&stack);
 	free(buffer);
-	free(file_for);
+	fclose(file_for);
 	exit(EXIT_SUCCESS);
 }
