@@ -24,6 +24,7 @@ void ret_operation(char *operation, stack_t **stack,
 		{"div", m_div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 
